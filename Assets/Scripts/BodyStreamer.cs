@@ -84,9 +84,7 @@ public class BodyStreamer : MonoBehaviour
     {
         try
         {
-            Debug.Log("Received something.");
-
-            socketConnection = new TcpClient("10.147.17.252", 8052);
+            socketConnection = new TcpClient("10.147.17.252", 40001);
             //socketConnection = new TcpClient("localhost", 8052);
             Byte[] bytes = new Byte[16532];
             while (true)
