@@ -10,9 +10,11 @@ public class BodyPlayer : MonoBehaviour
     List<string> jointNames;
     GameObject[] debugObjects;
     int frameNumber;
+    public static string StreamJSON;
+    Mapper mapper;
     void Start()
     {
-        string JSONPath = Path.Combine(Application.streamingAssetsPath, "walking_0.json");
+        string JSONPath = Path.Combine(Application.streamingAssetsPath, "stream.json");
         WWW JSONReader = new WWW(JSONPath);
         while (!JSONReader.isDone)
         {
@@ -36,8 +38,9 @@ public class BodyPlayer : MonoBehaviour
             debugObjects[i] = cube;
         }
 
-        frameNumber = 0;
-        StartCoroutine(PlayMotion());
+        //frameNumber = 0;
+        //StartCoroutine(PlayMotion());
+
     }
 
     IEnumerator PlayMotion()
@@ -64,4 +67,5 @@ public class BodyPlayer : MonoBehaviour
         }
         
     }
+
 }
